@@ -28,7 +28,7 @@
     .abstract p { margin: 0; color: #363636; font-size: 20px; line-height: 1.7; text-align: justify; }
     .video-section { width: min(100% - 40px, 1200px); margin-inline: auto; padding-bottom: 72px; scroll-margin-top: 32px; }
     .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
-    .depth-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+    .depth-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 32px, 1000px); }
       .hero { padding: 12px 0; }
