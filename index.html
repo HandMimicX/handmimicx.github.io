@@ -27,6 +27,8 @@
     .abstract h2, .video-section h2 { margin: 0 0 28px; text-align: center; font-size: 36px; font-weight: 700; line-height: 1.2; }
     .abstract p { margin: 0; color: #363636; font-size: 20px; line-height: 1.7; text-align: justify; }
     .video-section { width: min(100% - 40px, 1200px); margin-inline: auto; padding-bottom: 72px; scroll-margin-top: 32px; }
+    #policy-inference-title { margin-bottom: 12px; }
+    .section-subtitle { margin: 0 0 28px; text-align: center; font-size: 18px; color: var(--muted); }
     .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
     .depth-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
     @media (max-width: 640px) {
@@ -87,6 +89,7 @@
     </section>
     <section id="policy-inference" class="video-section" aria-labelledby="policy-inference-title">
       <h2 id="policy-inference-title">Policy Inference</h2>
+      <p class="section-subtitle">Eggplant Placement Demo</p>
       <video class="demo-video" controls muted loop playsinline preload="metadata" aria-labelledby="policy-inference-title" width="2192" height="1334">
         <source src="materials/policy_inference.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="materials/policy_inference.mp4">Watch the policy inference video.</a>
