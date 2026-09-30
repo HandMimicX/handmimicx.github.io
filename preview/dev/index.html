@@ -22,7 +22,10 @@
     .nav-links { display: flex; gap: 24px; font-size: 14px; }
     .nav-links a { text-decoration: none; color: var(--muted); }
     .nav-links a:hover { color: var(--blue); }
-    .hero { text-align: center; padding: 82px 0 58px; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: center; min-height: clamp(560px, 60vw, 820px); text-align: center; padding: 82px 0 58px; margin-bottom: 56px; background: #eef1f4; }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(255, 255, 255, .65); pointer-events: none; }
+    .hero-content { position: relative; }
     .eyebrow { margin: 0 0 20px; color: var(--muted); text-transform: uppercase; letter-spacing: .17em; font-size: 12px; font-weight: 600; }
     h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 10vw, 96px); letter-spacing: -.065em; line-height: 1.1; margin: 0 0 22px; font-weight: 700; }
     .h { color: var(--yellow); } .m { color: var(--blue); } .x { color: #00b050; }
@@ -59,7 +62,7 @@
       .wrap { width: min(100% - 32px, 1000px); }
       nav { flex-wrap: wrap; gap: 10px; padding-block: 15px; }
       .nav-links { gap: 18px; }
-      .hero { padding: 55px 0 38px; }
+      .hero { min-height: 620px; min-height: max(560px, calc(100svh - 110px)); padding: 55px 0 38px; margin-bottom: 24px; }
       .steps { grid-template-columns: 1fr; padding: 20px; gap: 6px; }
       .arrow { transform: rotate(90deg); line-height: 1.3; }
       .pipeline { margin-bottom: 24px; }
@@ -79,8 +82,12 @@
       <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#resources">Resources</a></div>
     </nav>
   </header>
-  <main id="main" class="wrap">
+  <main id="main">
     <div class="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+        <source src="materials/background.mp4" type="video/mp4">
+      </video>
+      <div class="wrap hero-content">
       <p class="eyebrow">Learning from human videos</p>
       <h1 aria-label="HandMimicX"><span class="h">H</span>and<span class="m">M</span>imic<span class="x">X</span></h1>
       <!-- Replace this descriptive subtitle with the final paper title when ready. -->
@@ -88,6 +95,8 @@
       <p class="anonymous">Anonymous authors</p>
       <a class="button" href="#overview">Explore the method <span aria-hidden="true">&nbsp;↓</span></a>
     </div>
+    </div>
+    <div class="wrap">
     <figure class="pipeline" aria-label="Method overview">
       <div class="steps">
         <div class="step"><span class="step-number">01 / OBSERVE</span><strong>Human videos</strong><small>Hand–object interactions</small></div>
@@ -120,6 +129,7 @@
       <div><p class="section-label">Resources</p><h2 id="resources-title">More to come.</h2><p>Paper, demonstrations, and code will be added here.</p></div>
       <span class="status">Coming soon</span>
     </section>
+    </div>
   </main>
   <footer><div class="wrap footer-row"><span>HandMimicX</span><span>Anonymous project page</span></div></footer>
 </body>
