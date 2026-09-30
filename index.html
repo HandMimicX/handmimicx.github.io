@@ -30,8 +30,10 @@
     .title-description { display: block; font-family: "Times New Roman", Times, serif; font-size: clamp(24px, 4vw, 36px); line-height: 1.35; font-weight: 500; max-width: 820px; margin: 22px auto 0; letter-spacing: -.025em; text-wrap: balance; }
     .h { color: var(--yellow); } .m { color: var(--blue); } .x { color: #00b050; }
     .abstract { width: min(100% - 40px, 800px); margin-inline: auto; padding: 64px 0 80px; scroll-margin-top: 20px; }
-    .abstract h2 { margin: 0 0 28px; text-align: center; font-size: 36px; font-weight: 700; line-height: 1.2; }
+    .abstract h2, .video-section h2 { margin: 0 0 28px; text-align: center; font-size: 36px; font-weight: 700; line-height: 1.2; }
     .abstract p { margin: 0; color: #363636; font-size: 20px; line-height: 1.7; text-align: justify; }
+    .video-section { width: min(100% - 40px, 1200px); margin-inline: auto; padding-bottom: 72px; scroll-margin-top: 32px; }
+    .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 32px, 1000px); }
       nav { flex-wrap: wrap; gap: 10px; padding-block: 15px; }
@@ -40,8 +42,9 @@
       .hero h1 { font-size: clamp(28px, 8vw, 48px); }
       .title-description { font-size: clamp(14px, 3.6vw, 23px); margin-top: 10px; }
       .abstract { width: calc(100% - 40px); padding: 40px 0 56px; }
-      .abstract h2 { font-size: 30px; margin-bottom: 22px; }
+      .abstract h2, .video-section h2 { font-size: 30px; margin-bottom: 22px; }
       .abstract p { font-size: 18px; }
+      .video-section { width: calc(100% - 32px); padding-bottom: 48px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -51,7 +54,7 @@
   <header>
     <nav class="wrap" aria-label="Main navigation">
       <a class="wordmark" href="#main">HandMimic<span class="x">X</span></a>
-      <div class="nav-links"><a href="#abstract">Abstract</a></div>
+      <div class="nav-links"><a href="#abstract">Abstract</a><a href="#ego">Ego</a><a href="#simulation">Simulation</a></div>
     </nav>
   </header>
   <main id="main">
@@ -66,6 +69,20 @@
     <section id="abstract" class="abstract" aria-labelledby="abstract-title">
       <h2 id="abstract-title">Abstract</h2>
       <p>Learning dexterous manipulation from human videos remains an open challenge, particularly in the context of transferring a single demonstration into a spatially generalizable robotic skill and maintaining physically plausible human-like interactions. Unlike prior works that emphasize hand-motion imitation, we introduce an object-centric framework for acquiring dexterous skills from egocentric human RGB-D videos. Within our framework, we formulate the reinforcement learning (RL) objective in terms of object motion to decouple the underlying skill from the specific hand trajectory and impose constraints on hand–object interaction states to promote more anatomically natural hand configurations. Extensive experiments in simulation and on real robots demonstrate that our method enables efficient learning from human videos and generalizable skill transfer across novel spatial configurations.</p>
+    </section>
+    <section id="ego" class="video-section" aria-labelledby="ego-title">
+      <h2 id="ego-title">Egocentric Human Demonstrations</h2>
+      <video class="demo-video" controls muted loop playsinline preload="metadata" aria-labelledby="ego-title" width="3840" height="1080">
+        <source src="materials/ego.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="materials/ego.mp4">Watch the egocentric demonstrations.</a>
+      </video>
+    </section>
+    <section id="simulation" class="video-section" aria-labelledby="simulation-title">
+      <h2 id="simulation-title">Simulation</h2>
+      <video class="demo-video" controls muted loop playsinline preload="metadata" aria-labelledby="simulation-title" width="2880" height="1440">
+        <source src="materials/simulation.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="materials/simulation.mp4">Watch the simulation video.</a>
+      </video>
     </section>
   </main>
 </body>
