@@ -16,12 +16,6 @@
     .wrap { width: min(100% - 40px, 1000px); margin-inline: auto; }
     .skip { position: absolute; left: 16px; top: -100px; padding: 8px 16px; background: #fff; z-index: 2; }
     .skip:focus { top: 10px; }
-    header { border-bottom: 1px solid var(--line); }
-    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 20px; }
-    .wordmark { font-weight: 750; letter-spacing: -.035em; text-decoration: none; color: var(--ink); font-size: 20px; }
-    .nav-links { display: flex; gap: 24px; font-size: 14px; }
-    .nav-links a { text-decoration: none; color: var(--muted); }
-    .nav-links a:hover { color: var(--blue); }
     .hero { position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: center; aspect-ratio: 2 / 1; text-align: center; padding: 24px 0; background: #eef1f4; }
     .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; z-index: -2; pointer-events: none; }
     .hero-content { position: relative; }
@@ -36,8 +30,6 @@
     .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 32px, 1000px); }
-      nav { flex-wrap: wrap; gap: 10px; padding-block: 15px; }
-      .nav-links { gap: 18px; }
       .hero { padding: 12px 0; }
       .hero h1 { font-size: clamp(28px, 8vw, 48px); }
       .title-description { font-size: clamp(14px, 3.6vw, 23px); margin-top: 10px; }
@@ -51,12 +43,6 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="wordmark" href="#main">HandMimic<span class="x">X</span></a>
-      <div class="nav-links"><a href="#abstract">Abstract</a><a href="#ego">Ego</a><a href="#simulation">Simulation</a></div>
-    </nav>
-  </header>
   <main id="main">
     <div class="hero">
       <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
