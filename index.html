@@ -29,7 +29,8 @@
     .video-section { width: min(100% - 40px, 1200px); margin-inline: auto; padding-bottom: 72px; scroll-margin-top: 32px; }
     #policy-inference-title { margin-bottom: 12px; }
     .section-subtitle { margin: 0 0 28px; text-align: center; font-size: 18px; color: var(--muted); }
-    .policy-overview { display: block; width: 100%; height: auto; margin-top: 40px; }
+    .framework-overview { margin-block: 0; }
+    .framework-overview img { display: block; width: 100%; height: auto; }
     .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
     .depth-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
     @media (max-width: 640px) {
@@ -61,6 +62,9 @@
       <h2 id="abstract-title">Abstract</h2>
       <p>Learning dexterous manipulation from human videos remains an open challenge, particularly in the context of transferring a single demonstration into a spatially generalizable robotic skill and maintaining physically plausible human-like interactions. Unlike prior works that emphasize hand-motion imitation, we introduce an object-centric framework for acquiring dexterous skills from egocentric human RGB-D videos. Within our framework, we formulate the reinforcement learning (RL) objective in terms of object motion to decouple the underlying skill from the specific hand trajectory and impose constraints on hand–object interaction states to promote more anatomically natural hand configurations. Extensive experiments in simulation and on real robots demonstrate that our method enables efficient learning from human videos and generalizable skill transfer across novel spatial configurations.</p>
     </section>
+    <figure class="video-section framework-overview">
+      <img src="materials/teaser_v6.jpg" alt="HandMimicX framework: single human video, hand-object interaction reconstruction, object-centric policy training, and real-world deployment." width="9302" height="4542" loading="lazy" decoding="async">
+    </figure>
     <section id="ego" class="video-section" aria-labelledby="ego-title">
       <h2 id="ego-title">Ego-centric Human Videos</h2>
       <video class="demo-video" controls muted loop playsinline preload="metadata" aria-labelledby="ego-title" width="3840" height="1080">
@@ -95,7 +99,6 @@
         <source src="materials/policy_inference.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="materials/policy_inference.mp4">Watch the policy inference video.</a>
       </video>
-      <img class="policy-overview" src="materials/teaser_v6.jpg" alt="HandMimicX framework: single human video, hand-object interaction reconstruction, object-centric policy training, and real-world deployment." width="9302" height="4542" loading="lazy" decoding="async">
     </section>
   </main>
 </body>
