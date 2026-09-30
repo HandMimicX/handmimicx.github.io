@@ -28,6 +28,7 @@
     .abstract p { margin: 0; color: #363636; font-size: 20px; line-height: 1.7; text-align: justify; }
     .video-section { width: min(100% - 40px, 1200px); margin-inline: auto; padding-bottom: 72px; scroll-margin-top: 32px; }
     .demo-video { display: block; width: 100%; height: auto; background: #000; border-radius: 8px; }
+    .depth-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 32px, 1000px); }
       .hero { padding: 12px 0; }
@@ -37,6 +38,7 @@
       .abstract h2, .video-section h2 { font-size: 30px; margin-bottom: 22px; }
       .abstract p { font-size: 18px; }
       .video-section { width: calc(100% - 32px); padding-bottom: 48px; }
+      .depth-grid { grid-template-columns: 1fr; gap: 20px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -62,6 +64,19 @@
         <source src="materials/ego.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="materials/ego.mp4">Watch the egocentric demonstrations.</a>
       </video>
+    </section>
+    <section id="depth-refinement" class="video-section" aria-labelledby="depth-refinement-title">
+      <h2 id="depth-refinement-title">Depth Refinement</h2>
+      <div class="depth-grid">
+        <video class="demo-video" controls muted loop playsinline preload="metadata" aria-label="Degreaser depth refinement: Before and After" width="1928" height="640">
+          <source src="materials/depth_refinement_degreaser.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="materials/depth_refinement_degreaser.mp4">Watch the degreaser depth refinement comparison.</a>
+        </video>
+        <video class="demo-video" controls muted loop playsinline preload="metadata" aria-label="Umbrella depth refinement: Before and After" width="1928" height="640">
+          <source src="materials/depth_refinement_umbrella.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="materials/depth_refinement_umbrella.mp4">Watch the umbrella depth refinement comparison.</a>
+        </video>
+      </div>
     </section>
     <section id="simulation" class="video-section" aria-labelledby="simulation-title">
       <h2 id="simulation-title">Simulation</h2>
